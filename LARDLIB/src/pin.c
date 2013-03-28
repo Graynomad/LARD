@@ -1,7 +1,25 @@
-//////////////////////////////// pins.c /////////////////////////////
+// Copyright (c) 2013, Rob Gray (www.robgray.com)
+//  
+// Permission to use, copy, modify, and/or distribute this software for  
+// any purpose with or without fee is hereby granted, provided that the  
+// above copyright notice and this permission notice appear in all copies.  
+// 
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL  
+// WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED  
+// WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR  
+// BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES  
+// OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,  
+// WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,  
+// ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS  
+// SOFTWARE.  
+//
+// History:
+//	17mar13:RG:Initial GIT upload
+//	
+//////////////////////////////// pin.c /////////////////////////////
 //
 // A set of functions to implement the handling of logical pin on
-// the LPC1227 (48-pin version).
+// the LPC1227.
 //
 // Only the 48-pin version of the chip is supported at this time,
 // however support for the 64-pin version would be easy to add.
@@ -111,6 +129,7 @@ const char pin_funcs [55][8] = {
 /* 38 */ {FUNC_GPIO, 		FUNC_CT16B1_CAP1, FUNC_CT16B1_MAT1,FUNC_INVALID,		// PIO1_6
 		  FUNC_INVALID, 	FUNC_INVALID, 	FUNC_INVALID, 	FUNC_INVALID},
 
+// 64 pin version, this table probably should be split into the chip_xx files
 /* 39 */ {FUNC_GPIO,		FUNC_INVALID, 	FUNC_INVALID, 	 FUNC_CT16B0_CAP0,		// PIO2_0
 		  FUNC_CT16B0_MAT0, FUNC_INVALID, 	FUNC_INVALID, 	 FUNC_INVALID},
 /* 40 */ {FUNC_GPIO, 		FUNC_INVALID, 	FUNC_CT16B0_CAP1,FUNC_CT16B0_MAT1,		// PIO2_1
@@ -193,6 +212,8 @@ __IO uint32_t * const pin_regs [] = {
 		&LPC_IOCON->PIO1_4,			// pin 36
 		&LPC_IOCON->PIO1_5,			// pin 37
 		&LPC_IOCON->PIO1_6,			// pin 38
+
+		// 64 pin version, this table probably should be split into the chip_xx files
 
 		// Port 2
 		&LPC_IOCON->PIO2_0,			// pin 39
