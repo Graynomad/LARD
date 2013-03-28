@@ -1,0 +1,14 @@
+//////////////////////////////// app.h ////////////////////////////
+//
+//
+//
+//
+//
+
+#ifndef APP_H_
+#define APP_H_
+
+extern const byte pin_map[] ;
+
+
+#endif /* APP_H_ */

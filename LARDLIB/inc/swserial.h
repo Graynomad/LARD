@@ -1,0 +1,12 @@
+//////////////////////////////// softserial.h ////////////////////////////
+//
+//
+//
+//
+//
+
+#ifndef SOFTSERIAL_H_
+#define SOFTSERIAL_H_
+
+
+#endif /* SOFTSERIAL_H_ */
